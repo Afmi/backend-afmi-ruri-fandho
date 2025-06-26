@@ -24,13 +24,23 @@ Repository ini berisi implementasi backend API untuk marketplace "merah kuning h
 
 ### 1. Clone Repository
 git clone https://github.com/your-username/backend-nama-lengkap.git
-cd backend-nama-lengkap
+cd backend-afmi-ruri-fandho
 
 ### 2. Install Depedency
 go mod init
 
-### 3. Menjalankan Project
-go run cmd/main.go
+### 3. Create Container pada Docker
+docker run -d \
+  --name user-management-db \
+  -e POSTGRES_DB=user-management \
+  -e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=p@ssword123 \
+  -p 5432:5432 \
+  -v postgres-data:/var/lib/postgresql/data \
+  postgres:14
 
+
+### 4. Menjalankan Project
+go run cmd/main.go
 
 ```bash
