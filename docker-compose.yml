@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: user-management-db
+    environment:
+      POSTGRES_DB: ${MASTER_DB_NAME}
+      POSTGRES_USER: ${MASTER_DB_USER}
+      POSTGRES_PASSWORD: ${MASTER_DB_PASSWORD}
+    ports:
+      - "${MASTER_DB_PORT}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres-data:

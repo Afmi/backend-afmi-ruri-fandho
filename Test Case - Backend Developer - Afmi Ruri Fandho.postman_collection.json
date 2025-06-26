@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "ab691832-b9f7-4b28-907f-103e09fbb9df",
+		"name": "Test Case - Backend Developer - Afmi Ruri Fandho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11703156"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no_identity\" : \"323423423423\",\r\n    \"fullname\" : \"yaya\",\r\n    \"email\" : \"yaya@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"tipe_user\": \"merchant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"yaya@gmail.com\",\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GetUserById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MzA3MjEsInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.ElYHl4zkFiJWJ5nm_F_nZCjaxBNxNMMmaj7GpV7ieTI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/user/ee04bec2-8141-4d4a-8355-7e63500c2873",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"ee04bec2-8141-4d4a-8355-7e63500c2873"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "ee04bec2-8141-4d4a-8355-7e63500c2873",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "GetCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MjkzOTQsInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.Yu5AKbnGvO1iz_CQglYDFXn0LhhcjKt06dGOURm0-sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no_identity\" : \"323423423423\",\r\n    \"fullname\" : \"Budi\",\r\n    \"email\" : \"budi@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"tipe_user\": \"merchant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/cart?id_user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"cart"
+							],
+							"query": [
+								{
+									"key": "id_user",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5Mzc4MTIsInVzZXJfaWQiOiIyMWY1N2UyMS04ZjRmLTQ2MGItOGM1MC00OThlMGU2YzY1ZTEifQ.BrzOTsMxiUG1xViqRGVYZxFLVNu3MRcvG23EmKfvIXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"owner_id\" : \"21f57e21-8f4f-460b-8c50-498e0e6c65e1\",\r\n    \"product_id\" : \"ae10db96-8b30-4126-9f6c-1f6bb652a6f0\",\r\n    \"price\" : 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/cart/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MjkzOTQsInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.Yu5AKbnGvO1iz_CQglYDFXn0LhhcjKt06dGOURm0-sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"owner_id\" : \"21f57e21-8f4f-460b-8c50-498e0e6c65e1\",\r\n    \"product_id\" : \"ae10db96-8b30-4126-9f6c-1f6bb652a6f0\",\r\n    \"price\" : 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/cart/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MjkzOTQsInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.Yu5AKbnGvO1iz_CQglYDFXn0LhhcjKt06dGOURm0-sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no_identity\" : \"323423423423\",\r\n    \"fullname\" : \"Budi\",\r\n    \"email\" : \"budi@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"tipe_user\": \"merchant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/cart/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MzY1MzksInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.kcmVcYqYih89vzoIESkt_iIW8WM-0YuR8l9_VuauHM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"page\": 1,\r\n  \"length\": 10,\r\n  \"orders\": [\"id\"],\r\n  \"sortType\": \"DESC\"\r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MzY1MzksInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.kcmVcYqYih89vzoIESkt_iIW8WM-0YuR8l9_VuauHM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Kopi\",\r\n    \"description\" : \"Kopi Hitam Bubuk\",\r\n    \"price\" : \"5000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MzY1MzksInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.kcmVcYqYih89vzoIESkt_iIW8WM-0YuR8l9_VuauHM4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"515aaa59-af48-4041-a956-a27ec297620e\",\r\n    \"name\" : \"Kopi\",\r\n    \"description\" : \"Kopi Hitam Bubuk\",\r\n    \"price\" : \"25000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA5MjkzOTQsInVzZXJfaWQiOiJlZTA0YmVjMi04MTQxLTRkNGEtODM1NS03ZTYzNTAwYzI4NzMifQ.Yu5AKbnGvO1iz_CQglYDFXn0LhhcjKt06dGOURm0-sw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"no_identity\" : \"323423423423\",\r\n    \"fullname\" : \"Budi\",\r\n    \"email\" : \"budi@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"tipe_user\": \"merchant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/api/product",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
